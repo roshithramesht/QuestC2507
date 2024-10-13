@@ -1,1 +1,68 @@
+//string builder
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Day4
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            var res = "";
+            res = string.Join(",", "heloo", "world");
+            Console.WriteLine(res);
+
+            var arr = new string[] { "hi", "world" };
+            res = string.Join(",", arr);
+            Console.WriteLine(res);
+
+            ///next method 
+            res = string.Concat("1", "2", 4, true);
+            Console.WriteLine(res);
+
+            var concatarray = new string[] { "hai", "from" };
+            res = string.Concat(concatarray);
+            Console.WriteLine(res);
+
+            ///next method of string builder 5
+            res = string.Format("{0},{1},{2}", "helo", "hey", "heloooo");
+            Console.WriteLine(res);
+
+            res = string.Format("{0},{1},{1}", "helo", "hey", "heloooo");
+            Console.WriteLine(res);
+
+            var formatarray = new string[] { "hai", "from" };
+            res = string.Format("{0},{1},{1}", formatarray);
+            Console.WriteLine(res);
+
+            
+            //next method6
+            var strr = new StringBuilder();
+            strr.AppendLine("line1");
+            strr.AppendLine("line1");
+
+            strr.Append("no newline");
+            strr.Append("no newline");
+
+            strr.AppendLine();
+
+            strr.AppendFormat("my name is {0} {1}", "abdul", "saleem");
+            res = strr.ToString();
+            Console.WriteLine(res);
+
+            string[] names = { " nikky", "krishnakumar", "sreedath" };
+            for (int i = 0; i < names.Length; i++)
+            {
+                strr.AppendLine($"{names[i]} is {i} years old.");
+            }
+            Console.WriteLine(strr.ToString());
+        }
+
+
+    }
+}
+
 
